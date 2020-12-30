@@ -1,18 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Looper : MonoBehaviour
+﻿
+public class Looper
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int UniqCode;
+    public int Number;
+    public float Xvalue;
+    public float Yvalue;
+    public float ZValue;
+    
 }
