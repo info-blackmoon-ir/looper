@@ -4,33 +4,36 @@ using UnityEngine;
 
 public class LooperTransparent : MonoBehaviour
 {
-    private LooperDesign theLooperDesign;
+    public GameObject theLooperDesign;
 
     // Start is called before the first frame update
     void Start()
     {
-        theLooperDesign = GameObject.FindObjectOfType<LooperDesign>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerEnter(Collider other)
     {
-        //if (col.getcomponent<looperdesign>())
-        //{
-        //    this.gameobject.setactive(false);
-        //}
-        print("olde");
+        if (other.GetComponent<LooperDesign>() && this.transform.parent != other.gameObject.transform) 
+        {
+            gameObject.SetActive(false);
+            //Debug.Log(this.gameObject.name + " : " + other.gameObject.name);
+        }
     }
+
+    
 
     private void OnMouseDown()
     {
-        theLooperDesign.Instantiate(this.transform);
-
+        Instantiate(theLooperDesign, transform.position, transform.rotation);
     }
+
+    
 
 }
