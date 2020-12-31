@@ -4,28 +4,34 @@ using UnityEngine;
 
 public class LooperDesign : MonoBehaviour
 {
-    [SerializeField] private GameObject looper;
-    public GameObject[] mychilds;
+    [SerializeField] private GameObject[] myChilds;
+
+    private DesignSetting theDesignSetting;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < mychilds.Length; i++)
+        theDesignSetting = GameObject.FindObjectOfType<DesignSetting>();
+        theDesignSetting.Loopers.Add(this.gameObject);
+
+        for (int i = 0; i < myChilds.Length; i++)
         {
-            mychilds[i].SetActive(true);
+            myChilds[i].SetActive(true);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void Instantiate( Transform transform)
+    public void FinalizeDesign()
     {
-
-
-        
+        for (int i = 0; i < myChilds.Length; i++)
+        {
+            myChilds[i].SetActive(false);
+        }
     }
+
 }

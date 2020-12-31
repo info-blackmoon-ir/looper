@@ -60,9 +60,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ccb599414a5d4d645b722d513a7e22f7, type: 2}
   - {fileID: 2100000, guid: 31c1ae764fc4b8b4da5a3baaeb58856a, type: 2}
-  - {fileID: 2100000, guid: 53efa7963a6d240459b5abeb9e945f8b, type: 2}
+  - {fileID: 2100000, guid: 31c1ae764fc4b8b4da5a3baaeb58856a, type: 2}
+  - {fileID: 2100000, guid: 31c1ae764fc4b8b4da5a3baaeb58856a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,8 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb764f6d7652b148bf05e0127616ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theLooperDesign: {fileID: 3717039849286865419, guid: 98a1a03dd1595f64fa5f2455f2b906a5,
-    type: 3}
+  looper: {fileID: 3717039849286865419, guid: 98a1a03dd1595f64fa5f2455f2b906a5, type: 3}
 --- !u!64 &-6813048226402622100
 MeshCollider:
   m_ObjectHideFlags: 0

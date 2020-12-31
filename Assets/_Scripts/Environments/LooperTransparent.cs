@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LooperTransparent : MonoBehaviour
 {
-    public GameObject theLooperDesign;
+    public GameObject looper;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,25 +16,24 @@ public class LooperTransparent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<LooperDesign>() && this.transform.parent != other.gameObject.transform) 
+        if (other.GetComponent<LooperDesign>() && this.transform.parent != other.gameObject.transform)
         {
             gameObject.SetActive(false);
-            //Debug.Log(this.gameObject.name + " : " + other.gameObject.name);
         }
     }
 
-    
+
 
     private void OnMouseDown()
     {
-        Instantiate(theLooperDesign, transform.position, transform.rotation);
+        Instantiate(looper, transform.position, transform.rotation);
     }
 
-    
+
 
 }
