@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a7893b525715242b2f156c922c0094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myChilds:
+  myTransparentChilds:
   - {fileID: 5384712453273033885}
   - {fileID: 6892617895871531438}
   - {fileID: 9019383372156791752}
@@ -139,6 +139,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 418498127807504408}
     m_Modifications:
+    - target: {fileID: 5384712452104673445, guid: 605b37382aaadcd47837d701b14158d6,
+        type: 3}
+      propertyPath: m_Name
+      value: Looper Trans
+      objectReference: {fileID: 0}
     - target: {fileID: 8998489657843165878, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -197,22 +202,17 @@ PrefabInstance:
     - target: {fileID: 8998489657843165878, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.99
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 8998489657843165878, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.99
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 8998489657843165878, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 5384712452104673445, guid: 605b37382aaadcd47837d701b14158d6,
-        type: 3}
-      propertyPath: m_Name
-      value: Looper Trans
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 6661952257985329133, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
@@ -240,6 +240,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 418498127807504408}
     m_Modifications:
+    - target: {fileID: 5384712452104673445, guid: 605b37382aaadcd47837d701b14158d6,
+        type: 3}
+      propertyPath: m_Name
+      value: Looper Trans (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8998489657843165878, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,22 +303,17 @@ PrefabInstance:
     - target: {fileID: 8998489657843165878, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.99
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 8998489657843165878, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.99
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 8998489657843165878, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 5384712452104673445, guid: 605b37382aaadcd47837d701b14158d6,
-        type: 3}
-      propertyPath: m_Name
-      value: Looper Trans (1)
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 6661952257985329133, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
@@ -341,6 +341,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 418498127807504408}
     m_Modifications:
+    - target: {fileID: 5384712452104673445, guid: 605b37382aaadcd47837d701b14158d6,
+        type: 3}
+      propertyPath: m_Name
+      value: Looper Trans (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8998489657843165878, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -399,22 +404,17 @@ PrefabInstance:
     - target: {fileID: 8998489657843165878, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.99
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 8998489657843165878, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.99
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 8998489657843165878, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 5384712452104673445, guid: 605b37382aaadcd47837d701b14158d6,
-        type: 3}
-      propertyPath: m_Name
-      value: Looper Trans (2)
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 6661952257985329133, guid: 605b37382aaadcd47837d701b14158d6,
         type: 3}

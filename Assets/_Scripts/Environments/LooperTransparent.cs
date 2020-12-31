@@ -6,7 +6,6 @@ public class LooperTransparent : MonoBehaviour
 {
     public GameObject looper;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +18,13 @@ public class LooperTransparent : MonoBehaviour
         
     }
 
+    // Spawns a new Looper at its position after touching.
+    private void OnMouseDown()
+    {
+        Instantiate(looper, transform.position, transform.rotation);
+    }
+
+    // Deactivates itself after colliding with the new spawned Looper.
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<LooperDesign>() && this.transform.parent != other.gameObject.transform)
@@ -26,14 +32,5 @@ public class LooperTransparent : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
-
-
-    private void OnMouseDown()
-    {
-        Instantiate(looper, transform.position, transform.rotation);
-    }
-
-
 
 }
