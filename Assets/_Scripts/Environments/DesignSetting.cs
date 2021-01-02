@@ -5,9 +5,10 @@ using TMPro;
 
 public class DesignSetting : MonoBehaviour
 {
-    public GameObject looper;
+    public GameObject looper, selectedLooper, autoGeneratePanel, colorizingPanel, clearPanel;
     public LooperTransparent[] allTransparentChilds;
     public List<GameObject> Loopers = new List<GameObject>();
+
     public int looperAmount = 9;
 
     [SerializeField] private TextMeshProUGUI looperAmontTxt;
@@ -119,6 +120,19 @@ public class DesignSetting : MonoBehaviour
     // TODO: Switch the Amount panel with color panel.
     public void SetUpColoringPanel()
     {
+        autoGeneratePanel.SetActive(false);
+        clearPanel.SetActive(false);
+        colorizingPanel.SetActive(true);
+    }
+
+    public void Color(string hexColor)
+    {
+        Color color;
+
+        if (ColorUtility.TryParseHtmlString("#" + hexColor, out color))
+        {
+            selectedLooper.GetComponent<MeshRenderer>().materials[1].SetColor("_Color", color);
+        }
 
     }
     
