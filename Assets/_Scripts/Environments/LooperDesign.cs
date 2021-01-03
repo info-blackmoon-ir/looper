@@ -8,31 +8,34 @@ public class LooperDesign : MonoBehaviour
 
     private DesignSetting theDesignSetting;
 
-    public Material red;
-
     // Start is called before the first frame update
     void Start()
     {
         theDesignSetting = GameObject.FindObjectOfType<DesignSetting>();
         theDesignSetting.Loopers.Add(this.gameObject);
 
-        for (int i = 0; i < myTransparentChilds.Length; i++)
-        {
-            myTransparentChilds[i].SetActive(true);
-        }
+        ActivateChildren();
 
-        this.gameObject.GetComponent<MeshRenderer>().materials[1].SetColor("_Color", Color.white);
+        this.GetComponent<MeshRenderer>().materials[1].SetColor("_Color", Color.white);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnMouseDown()
     {
         theDesignSetting.selectedLooper = this.gameObject;
+    }
+
+    public void ActivateChildren()
+    {
+        for (int i = 0; i < myTransparentChilds.Length; i++)
+        {
+            myTransparentChilds[i].SetActive(true);
+        }
     }
 
 }

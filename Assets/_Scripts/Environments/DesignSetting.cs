@@ -5,7 +5,7 @@ using TMPro;
 
 public class DesignSetting : MonoBehaviour
 {
-    public GameObject looper, selectedLooper, autoGeneratePanel, colorizingPanel, clearPanel;
+    public GameObject looper, selectedLooper, autoGeneratePanel, colorizingPanel, finalizeDesignPanel, finalizeColoringPanel;
     public LooperTransparent[] allTransparentChilds;
     public List<GameObject> Loopers = new List<GameObject>();
 
@@ -17,6 +17,8 @@ public class DesignSetting : MonoBehaviour
     void Start()
     {
         looperAmontTxt.text = looperAmount.ToString();
+        colorizingPanel.GetComponent<Animator>().SetBool("isActive", false);
+        finalizeColoringPanel.GetComponent<Animator>().SetBool("isActive", false);
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class DesignSetting : MonoBehaviour
     // Decreases the amount of Loopers used for auto generating.
     public void RemoveLooper()
     {
-        if (looperAmount > 1)
+        if (looperAmount > 3)
         {
             looperAmount--;
         }
@@ -120,9 +122,27 @@ public class DesignSetting : MonoBehaviour
     // TODO: Switch the Amount panel with color panel.
     public void SetUpColoringPanel()
     {
-        autoGeneratePanel.SetActive(false);
-        clearPanel.SetActive(false);
-        colorizingPanel.SetActive(true);
+        FinalizeDesign();
+
+        finalizeDesignPanel.GetComponent<Animator>().SetBool("isActive", false);
+        finalizeColoringPanel.GetComponent<Animator>().SetBool("isActive", true);
+
+        autoGeneratePanel.GetComponent<Animator>().SetBool("isActive", false);
+        colorizingPanel.GetComponent<Animator>().SetBool("isActive", true);
+    }
+
+    public void SetUpDesigningPanel()
+    {
+        foreach (GameObject looper in Loopers)
+        {
+            looper.GetComponent<LooperDesign>().ActivateChildren();
+        }
+
+        finalizeDesignPanel.GetComponent<Animator>().SetBool("isActive", true);
+        finalizeColoringPanel.GetComponent<Animator>().SetBool("isActive", false);
+
+        autoGeneratePanel.GetComponent<Animator>().SetBool("isActive", true);
+        colorizingPanel.GetComponent<Animator>().SetBool("isActive", false);
     }
 
     public void Color(string hexColor)
