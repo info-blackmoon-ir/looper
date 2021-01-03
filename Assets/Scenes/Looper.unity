@@ -3482,6 +3482,9 @@ MonoBehaviour:
   finalizeColoringPanel: {fileID: 1857510414}
   allTransparentChilds: []
   Loopers: []
+  _loopers: []
+  data:
+    loopers: []
   looperAmount: 9
   looperAmontTxt: {fileID: 451302986}
 --- !u!4 &1554479208

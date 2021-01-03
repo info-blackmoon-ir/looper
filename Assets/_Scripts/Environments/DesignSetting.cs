@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using SaveSys;
 
 public class DesignSetting : MonoBehaviour
 {
     public GameObject looper, selectedLooper, autoGeneratePanel, colorizingPanel, finalizeDesignPanel, finalizeColoringPanel;
     public LooperTransparent[] allTransparentChilds;
     public List<GameObject> Loopers = new List<GameObject>();
+    public Looper[] _loopers;
+    public LooperData data;
 
     public int looperAmount = 9;
 
@@ -154,6 +157,19 @@ public class DesignSetting : MonoBehaviour
             selectedLooper.GetComponent<MeshRenderer>().materials[1].SetColor("_Color", color);
         }
 
+    }
+
+
+    public void SaveaLoooper()
+    {
+        SaveSystem.SaveData(_loopers, "Looper");
+    }
+
+    public void LoadaLooper()
+    {
+        data = SaveSystem.LoadData("Looper");
+        _loopers = data.loopers;
+        _loopers[1].ZRotation = Loopers[1].transform.rotation.z;
     }
     
 }
