@@ -186,7 +186,10 @@ public class DesignSetting : MonoBehaviour
 
     public void LoadaLooper()
     {
-        data = SaveSystem.LoadData("Looper");
+        //data.loopers.Clone(SaveSystem.LoadData("Looper").loopers);
+        System.Array.Copy(data.loopers, SaveSystem.LoadData("Looper").loopers,1);
+        //data = SaveSystem.LoadData("Looper");
+
         //Looper[]  LooperData = data.loopers;
         Debug.Log(data.loopers[1].Xvalue);
     }
