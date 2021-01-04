@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LooperDesign : MonoBehaviour
 {
+    public string hexColorCode = "FFFFFF";
+
     [SerializeField] private GameObject[] myTransparentChilds;
 
     private DesignSetting theDesignSetting;

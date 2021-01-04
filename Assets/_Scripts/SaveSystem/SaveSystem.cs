@@ -12,10 +12,10 @@ namespace SaveSys {
         public static void SaveData(Looper[] loopers, string num)
         {
             BinaryFormatter binary = new BinaryFormatter();
-            string path = Application.persistentDataPath + num + ".Data";
+            string path = Application.persistentDataPath+"/" + num + ".Data";
             //FileStream file = new FileStream(path, FileMode.CreateNew);
             FileStream file = File.Create(path);
-            
+            Debug.Log("File has been Saves into : " + path);
             LooperData data = new LooperData(loopers);
             binary.Serialize(file, data);
             file.Close();
@@ -23,7 +23,7 @@ namespace SaveSys {
 
         public static LooperData LoadData(string num)
         {
-            string path = Application.persistentDataPath + num + ".Data";
+            string path = Application.persistentDataPath + "/" + num + ".Data";
             if (File.Exists(path))
             {
                 BinaryFormatter binary = new BinaryFormatter();

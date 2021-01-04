@@ -1393,7 +1393,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1554479207}
-        m_MethodName: SetUpColoringPanel
+        m_MethodName: SaveLoopers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2954,7 +2954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.78431374}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3482,9 +3482,149 @@ MonoBehaviour:
   finalizeColoringPanel: {fileID: 1857510414}
   allTransparentChilds: []
   Loopers: []
-  _loopers: []
+  looperData:
+  - UniqCode: 0
+    Number: 0
+    Xvalue: 0
+    Yvalue: 0
+    ZValue: 0
+    ZRotation: 0
+    HexCode: 
+  - UniqCode: 0
+    Number: 0
+    Xvalue: 0
+    Yvalue: 0
+    ZValue: 0
+    ZRotation: 0
+    HexCode: 
+  - UniqCode: 0
+    Number: 0
+    Xvalue: 0
+    Yvalue: 0
+    ZValue: 0
+    ZRotation: 0
+    HexCode: 
+  - UniqCode: 0
+    Number: 0
+    Xvalue: 0
+    Yvalue: 0
+    ZValue: 0
+    ZRotation: 0
+    HexCode: 
+  - UniqCode: 0
+    Number: 0
+    Xvalue: 0
+    Yvalue: 0
+    ZValue: 0
+    ZRotation: 0
+    HexCode: 
+  - UniqCode: 0
+    Number: 0
+    Xvalue: 0
+    Yvalue: 0
+    ZValue: 0
+    ZRotation: 0
+    HexCode: 
+  - UniqCode: 0
+    Number: 0
+    Xvalue: 0
+    Yvalue: 0
+    ZValue: 0
+    ZRotation: 0
+    HexCode: 
+  - UniqCode: 0
+    Number: 0
+    Xvalue: 0
+    Yvalue: 0
+    ZValue: 0
+    ZRotation: 0
+    HexCode: 
+  - UniqCode: 0
+    Number: 0
+    Xvalue: 0
+    Yvalue: 0
+    ZValue: 0
+    ZRotation: 0
+    HexCode: 
+  - UniqCode: 0
+    Number: 0
+    Xvalue: 0
+    Yvalue: 0
+    ZValue: 0
+    ZRotation: 0
+    HexCode: 
   data:
-    loopers: []
+    loopers:
+    - UniqCode: 0
+      Number: 0
+      Xvalue: 0
+      Yvalue: 0
+      ZValue: 0
+      ZRotation: 0
+      HexCode: 
+    - UniqCode: 0
+      Number: 0
+      Xvalue: 0
+      Yvalue: 0
+      ZValue: 0
+      ZRotation: 0
+      HexCode: 
+    - UniqCode: 0
+      Number: 0
+      Xvalue: 0
+      Yvalue: 0
+      ZValue: 0
+      ZRotation: 0
+      HexCode: 
+    - UniqCode: 0
+      Number: 0
+      Xvalue: 0
+      Yvalue: 0
+      ZValue: 0
+      ZRotation: 0
+      HexCode: 
+    - UniqCode: 0
+      Number: 0
+      Xvalue: 0
+      Yvalue: 0
+      ZValue: 0
+      ZRotation: 0
+      HexCode: 
+    - UniqCode: 0
+      Number: 0
+      Xvalue: 0
+      Yvalue: 0
+      ZValue: 0
+      ZRotation: 0
+      HexCode: 
+    - UniqCode: 0
+      Number: 0
+      Xvalue: 0
+      Yvalue: 0
+      ZValue: 0
+      ZRotation: 0
+      HexCode: 
+    - UniqCode: 0
+      Number: 0
+      Xvalue: 0
+      Yvalue: 0
+      ZValue: 0
+      ZRotation: 0
+      HexCode: 
+    - UniqCode: 0
+      Number: 0
+      Xvalue: 0
+      Yvalue: 0
+      ZValue: 0
+      ZRotation: 0
+      HexCode: 
+    - UniqCode: 0
+      Number: 0
+      Xvalue: 0
+      Yvalue: 0
+      ZValue: 0
+      ZRotation: 0
+      HexCode: 
   looperAmount: 9
   looperAmontTxt: {fileID: 451302986}
 --- !u!4 &1554479208
@@ -3950,7 +4090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.78431374}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

@@ -9,7 +9,8 @@ public class DesignSetting : MonoBehaviour
     public GameObject looper, selectedLooper, autoGeneratePanel, colorizingPanel, finalizeDesignPanel, finalizeColoringPanel;
     public LooperTransparent[] allTransparentChilds;
     public List<GameObject> Loopers = new List<GameObject>();
-    public Looper[] _loopers;
+
+    public Looper[] looperData;
     public LooperData data;
 
     public int looperAmount = 9;
@@ -132,6 +133,7 @@ public class DesignSetting : MonoBehaviour
 
         autoGeneratePanel.GetComponent<Animator>().SetBool("isActive", false);
         colorizingPanel.GetComponent<Animator>().SetBool("isActive", true);
+
     }
 
     public void SetUpDesigningPanel()
@@ -155,21 +157,38 @@ public class DesignSetting : MonoBehaviour
         if (ColorUtility.TryParseHtmlString("#" + hexColor, out color))
         {
             selectedLooper.GetComponent<MeshRenderer>().materials[1].SetColor("_Color", color);
+            selectedLooper.GetComponent<LooperDesign>().hexColorCode = hexColor;
         }
 
     }
 
-
-    public void SaveaLoooper()
+    public void SaveLoopers()
     {
-        SaveSystem.SaveData(_loopers, "Looper");
+
+        //looperData[0].Number = 0;
+        //looperData[0].Xvalue = Loopers[0].transform.position.x;
+        for (int i = 0; i < Loopers.Count; i++)
+        {
+
+            looperData[i].Number = i;
+            looperData[i].Xvalue = Loopers[i].transform.position.x;
+            looperData[i].Yvalue = Loopers[i].transform.position.y;
+            looperData[i].ZValue = Loopers[i].transform.position.z;
+            looperData[i].ZRotation = Loopers[i].transform.rotation.eulerAngles.z;
+            looperData[i].HexCode = Loopers[i].GetComponent<LooperDesign>().hexColorCode;
+        }
+
+        SaveSystem.SaveData(looperData, "Looper");
+
+        LoadaLooper();
+
     }
 
     public void LoadaLooper()
     {
         data = SaveSystem.LoadData("Looper");
-        _loopers = data.loopers;
-        _loopers[1].ZRotation = Loopers[1].transform.rotation.z;
+        //Looper[]  LooperData = data.loopers;
+        Debug.Log(data.loopers[1].Xvalue);
     }
     
 }
