@@ -55,7 +55,7 @@ namespace SaveSys {
             }
         }
 
-        public static int LoadCongif(string name)
+        public static int LoadConfig(string name)
         {
             string path = Application.persistentDataPath + "/" + name + "/" + "Loop.config";
             if (File.Exists(path))

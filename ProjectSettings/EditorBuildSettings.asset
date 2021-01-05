@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Looper.unity
+    guid: 3a96ea3725d587940bf8a4fd21608a7f
+  - enabled: 1
     path: Assets/Scenes/3DView.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

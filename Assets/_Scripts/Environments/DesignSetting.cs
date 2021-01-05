@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using SaveSys;
+using UnityEngine.SceneManagement;
 
 public class DesignSetting : MonoBehaviour
 {
@@ -165,8 +166,6 @@ public class DesignSetting : MonoBehaviour
     public void SaveLoopers()
     {
 
-        //looperData[0].Number = 0;
-        //looperData[0].Xvalue = Loopers[0].transform.position.x;
         for (int i = 0; i < Loopers.Count; i++)
         {
 
@@ -178,26 +177,11 @@ public class DesignSetting : MonoBehaviour
             looperData[i].HexCode = Loopers[i].GetComponent<LooperDesign>().hexColorCode;
             SaveSystem.SaveData(looperData[i], "Looper", i.ToString());
         }
+
         SaveSystem.SaveConfig("Looper", Loopers.Count.ToString());
-        
 
-        //LoadaLooper();
-
+        SceneManager.LoadScene("3DView");
     }
 
-    public void LoadaLooper()
-    {
-        int c = SaveSystem.LoadCongif("Looper");
-        for (int i = 0; i < c; i++)
-        {
-            loadedLooper.Add(SaveSystem.LoadData("Looper", i.ToString()));
-        }
-        //data.loopers.Clone(SaveSystem.LoadData("Looper").loopers);
-        //System.Array.Copy(data.loopers, SaveSystem.LoadData("Looper").loopers,1);
-        //data = SaveSystem.LoadData("Looper");
-        
-        //Looper[]  LooperData = data.loopers;
-        
-    }
     
 }
