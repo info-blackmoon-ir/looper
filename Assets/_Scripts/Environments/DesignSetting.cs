@@ -11,8 +11,8 @@ public class DesignSetting : MonoBehaviour
     public List<GameObject> Loopers = new List<GameObject>();
 
     public Looper[] looperData;
-    public LooperData data;
 
+    public List<Looper> loadedLooper = new List<Looper>();
     public int looperAmount = 9;
 
     [SerializeField] private TextMeshProUGUI looperAmontTxt;
@@ -176,22 +176,28 @@ public class DesignSetting : MonoBehaviour
             looperData[i].ZValue = Loopers[i].transform.position.z;
             looperData[i].ZRotation = Loopers[i].transform.rotation.eulerAngles.z;
             looperData[i].HexCode = Loopers[i].GetComponent<LooperDesign>().hexColorCode;
+            SaveSystem.SaveData(looperData[i], "Looper", i.ToString());
         }
+        SaveSystem.SaveConfig("Looper", Loopers.Count.ToString());
+        
 
-        SaveSystem.SaveData(looperData, "Looper");
-
-        LoadaLooper();
+        //LoadaLooper();
 
     }
 
     public void LoadaLooper()
     {
+        int c = SaveSystem.LoadCongif("Looper");
+        for (int i = 0; i < c; i++)
+        {
+            loadedLooper.Add(SaveSystem.LoadData("Looper", i.ToString()));
+        }
         //data.loopers.Clone(SaveSystem.LoadData("Looper").loopers);
-        System.Array.Copy(data.loopers, SaveSystem.LoadData("Looper").loopers,1);
+        //System.Array.Copy(data.loopers, SaveSystem.LoadData("Looper").loopers,1);
         //data = SaveSystem.LoadData("Looper");
-
+        
         //Looper[]  LooperData = data.loopers;
-        Debug.Log(data.loopers[1].Xvalue);
+        
     }
     
 }

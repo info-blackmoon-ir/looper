@@ -9,26 +9,42 @@ namespace SaveSys {
 
     public class SaveSystem : MonoBehaviour
     {
-        public static void SaveData(Looper[] loopers, string num)
+        public static void SaveData(Looper looper, string name,string number)
         {
+            var folder = Directory.CreateDirectory(Application.persistentDataPath + "/" + name);
+            string path = Application.persistentDataPath + "/" + name + "/" + "Loop" + number + ".data";
             BinaryFormatter binary = new BinaryFormatter();
-            string path = Application.persistentDataPath+"/" + num + ".txt";
+            
             //FileStream file = new FileStream(path, FileMode.CreateNew);
             FileStream file = File.Create(path);
             Debug.Log("File has been Saves into : " + path);
-            LooperData data = new LooperData(loopers);
-            binary.Serialize(file, data);
+            binary.Serialize(file, looper);
+            file.Close();
+
+            
+        }
+
+        public static void SaveConfig(string name,string number)
+        {
+            string path = Application.persistentDataPath + "/" + name + "/" + "Loop.config";
+            BinaryFormatter binary = new BinaryFormatter();
+
+            //FileStream file = new FileStream(path, FileMode.CreateNew);
+            FileStream file = File.Create(path);
+            Debug.Log("File has been Saves into : " + path);
+            binary.Serialize(file, number);
             file.Close();
         }
 
-        public static LooperData LoadData(string num)
+        public static Looper LoadData(string name,string number)
         {
-            string path = Application.persistentDataPath + "/" + num + ".txt";
+            var folder = Directory.CreateDirectory(Application.persistentDataPath + "/"+ name);
+            string path = Application.persistentDataPath + "/" + name + "/" + "Loop" + number + ".data";
             if (File.Exists(path))
             {
                 BinaryFormatter binary = new BinaryFormatter();
                 FileStream file = new FileStream(path, FileMode.Open);
-                LooperData data = binary.Deserialize(file) as LooperData;
+                Looper data = binary.Deserialize(file) as Looper;
                 file.Close();
                 
                 return data;
@@ -38,5 +54,25 @@ namespace SaveSys {
                 return null;
             }
         }
+
+        public static int LoadCongif(string name)
+        {
+            string path = Application.persistentDataPath + "/" + name + "/" + "Loop.config";
+            if (File.Exists(path))
+            {
+                BinaryFormatter binary = new BinaryFormatter();
+                FileStream file = new FileStream(path, FileMode.Open);
+                string data = binary.Deserialize(file) as string;
+                
+                file.Close();
+
+                return int.Parse(data);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        
     }
 }
