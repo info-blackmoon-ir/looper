@@ -1,4 +1,4 @@
-﻿
+﻿using System.Collections.Generic;
 [System.Serializable]
 public class Looper
 {
@@ -12,13 +12,3 @@ public class Looper
     
 }
 
-[System.Serializable]
-public class LooperData
-{
-    public Looper[] loopers;
-
-    public LooperData(Looper[] loopers)
-    {
-        loopers = this.loopers;
-    }
-}
