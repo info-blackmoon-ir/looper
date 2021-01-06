@@ -30,6 +30,15 @@ public class LooperDesign : MonoBehaviour
     private void OnMouseDown()
     {
         theDesignSetting.selectedLooper = this.gameObject;
+
+        Color color;
+
+        this.hexColorCode = theDesignSetting.looperHexColor;
+
+        if (ColorUtility.TryParseHtmlString("#" + hexColorCode, out color))
+        {
+            this.GetComponent<MeshRenderer>().materials[1].SetColor("_Color", color);
+        }
     }
 
     public void ActivateChildren()
