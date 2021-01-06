@@ -18,6 +18,8 @@ public class DesignSetting : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI looperAmontTxt;
 
+    public string looperHexColor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -144,6 +146,8 @@ public class DesignSetting : MonoBehaviour
             looper.GetComponent<LooperDesign>().ActivateChildren();
         }
 
+        looperHexColor = "FFFFFF";
+
         finalizeDesignPanel.GetComponent<Animator>().SetBool("isActive", true);
         finalizeColoringPanel.GetComponent<Animator>().SetBool("isActive", false);
 
@@ -151,15 +155,9 @@ public class DesignSetting : MonoBehaviour
         colorizingPanel.GetComponent<Animator>().SetBool("isActive", false);
     }
 
-    public void Color(string hexColor)
+    public void ColorSelect(string hexColor)
     {
-        Color color;
-
-        if (ColorUtility.TryParseHtmlString("#" + hexColor, out color))
-        {
-            selectedLooper.GetComponent<MeshRenderer>().materials[1].SetColor("_Color", color);
-            selectedLooper.GetComponent<LooperDesign>().hexColorCode = hexColor;
-        }
+        looperHexColor = hexColor;
 
     }
 
